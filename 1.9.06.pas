@@ -1,28 +1,33 @@
-var a:array[1..26]of longint;
+var maxn,minn:longint;
+	a:array[1..26]of longint;
+	i,j,t:longint;
 	str:string;
-	maxn,minn,i,j,t:longint;
+	len:longint;
 	f:boolean;
 begin
-	fillchar(a,sizeof(a),0);
 	readln(str);
-	for i:=1 to length(str) do if ('a'<=str[i])and(str[i]<='z') then inc(a[ord(str[i])-96]);
+	fillchar(a,sizeof(a),0);
+	len:=length(str);
+	for i:=1 to len do inc(a[ord(str[i])-96]);
 	maxn:=0;
 	minn:=maxlongint;
 	for i:=1 to 26 do begin
 		if a[i]>maxn then maxn:=a[i];
-		if a[i]<minn then minn:=a[i];
+		if (a[i]<minn)and(a[i]<>0) then minn:=a[i];
 	end;
 	j:=maxn-minn;
-	t:=2;
 	f:=true;
-	while (t<=trunc(sqrt(j))) do if j mod t=0 then f:=false else inc(t);
-	if j=1 then f:=true;
+	if j<=1 then f:=false;
+	t:=2;
+	while (t<=trunc(sqrt(j))) do if j mod t=0 then begin
+	  f:=false;
+	  break;
+	end else inc(t);
 	if f then begin
-	  writeln('Lucky Word');
-      writeln(j)
-	end
-    else begin
+	   writeln('Lucky Word');
+	   write(j);
+	end else begin
 		writeln('No Answer');
-		writeln(0);
+		write(0);
 	end;
 end.
