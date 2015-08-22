@@ -1,3 +1,4 @@
+// do not use this version of 1.9.10
 var str:string;
     max,n,i,j,len,tmp:longint;
 	a:array[1..200,0..200]of longint;
