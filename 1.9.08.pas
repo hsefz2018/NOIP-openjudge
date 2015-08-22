@@ -1,6 +1,6 @@
-var sum,max,min,avg,deviation:double;
+var sum,max,min,avg,deviation:extended;
 	n,i,maxi,mini:longint;
-	a:array[1..305]of double;
+	a:array[1..305]of extended;
 begin
 	sum:=0;
 	max:=0;
@@ -20,7 +20,7 @@ begin
 	end;
 	sum:=sum-max-min;
 	avg:=sum/(n-2);
-	writeln(avg:0:2);
+	write(avg:0:2,' ');
 	deviation:=0;
 	for i:=1 to n do if (abs(avg-a[i])>deviation)and(i<>maxi)and(i<>mini) then deviation:=abs(avg-a[i]);
 	writeln(deviation:0:2);
