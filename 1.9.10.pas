@@ -1,4 +1,3 @@
-// do not use this version of 1.9.10
 var str:string;
     max,n,i,j,len,tmp:longint;
 	a:array[1..200,0..200]of longint;
@@ -14,11 +13,14 @@ begin
 		tmp:=0;
 		for j:=1 to len do 
 			if ('0'<=str[j])and(str[j]<='9') then tmp:=tmp*10+ord(str[j])-48
-		else if str[j]=',' then begin
+		else if (str[j]=',') then begin
 		  inc(a[i,0]);
 		  a[i,a[i,0]]:=tmp;
-		  tmp:=1;
-		end;
+		  tmp:=0;
+	    end;
+		inc(a[i,0]);
+		a[i,a[i,0]]:=tmp;
+		tmp:=0;
 	end;
 	max:=0;
 	for i:=1 to n do 
@@ -32,7 +34,7 @@ begin
 		  rec[rec[0]]:=i;
 		end;
 	end;
-	for i:=1 to rec[0] do if i=rec[0] then write(i) else write(i,',');
+	for i:=1 to rec[0] do if i=rec[0] then write(rec[i]) else write(rec[i],',');
 end.
 
 
