@@ -1,4 +1,4 @@
-var str:string;
+var str:ansistring;
     max,n,i,j,len,tmp:longint;
 	a:array[1..200,0..200]of longint;
 	rec:array[0..200]of longint;
