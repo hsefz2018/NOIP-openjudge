@@ -1,5 +1,5 @@
 # NOIP-OpenJudge
 
-Repo for noi.openjudge.cn
+Repo for [noi.openjudge.cn](http://noi.openjudge.cn/)
 
-See Intropage magetron.github.io/NOIP-OpenJudge
+For more details, see [Intro Page](http://magetron.github.io/NOIP-openjudge/)
