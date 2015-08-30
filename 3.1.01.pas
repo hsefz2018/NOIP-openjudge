@@ -1,3 +1,4 @@
+// WA for no reason
 var name:array [1..1000] of string;
     count,i,j,k,n,m,l:longint;
 	ch:char;
