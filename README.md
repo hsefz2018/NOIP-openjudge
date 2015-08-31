@@ -10,7 +10,7 @@ This repo is under MIT License.
 
 ## Wonna Contribute?
 
-Contact [magetron](magetron1@gmail.com)
+Contact [magetron](http://scr.im/patrickw)
 
 
 
