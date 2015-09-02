@@ -1,20 +1,24 @@
-//Still Debugging
 var a,b,c,d,t:longint;
-	va,vb,vc,vd,cycle,rest:extended;
+	va,vb,vc,vd,cycle,backup:extended;
 begin
 	readln(a,b,c,d);
-	va:=1/a;
-	vb:=1/b;
-	vc:=1/c;
-	vd:=1/d;
+	va:=1000/a;
+	vb:=1000/b;
+	vc:=1000/c;
+	vd:=1000/d;
     cycle:=0;
 	t:=0;
 	repeat
-		cycle:=cycle+va-vb+vc-vd;
 		inc(t);
-	until cycle>1;
-	dec(t);
-	rest:=1-(cycle-(va-vb+vc-vd));
-	if rest<va then writeln(t+(rest/va):0:2);
-	if rest>va then writeln(t+(rest-va+vb)/vc):0:2);
+		backup:=cycle;
+		if t mod 4=1 then cycle:=cycle+va;
+		if t mod 4=2 then cycle:=cycle-vb;
+		if t mod 4=3 then cycle:=cycle+vc;
+		if t mod 4=0 then cycle:=cycle-vd;
+	until cycle>=999;
+    if cycle=999 then writeln(t,'.00') else begin
+      t:=t-1;
+	  if t mod 4=0 then writeln((1000-backup)/va+t:0:2)
+	    else if t mod 4=2 then writeln((1000-backup)/vc+t:0:2);
+    end;
 end.
