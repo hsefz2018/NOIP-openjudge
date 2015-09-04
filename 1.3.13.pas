@@ -1,4 +1,4 @@
-var str:string;
+//var str:string;
 	i:longint;
 begin
 	readln(str);
