@@ -14,7 +14,7 @@ Contact [magetron](http://scr.im/patrickw)
 
 ## Current Progress
 
-#### Total Progress: 96/313 on f10771860a612692da2dba92165b7fd5bed16f34
+#### Total Progress: 96/313 
 
 ID  | Name                              | Complete
 :---- | :---------------------------------: | :--------
