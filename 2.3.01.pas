@@ -43,10 +43,3 @@ begin
 	qsort(a);
 	for i:=n downto n-k+1 do writeln(a[i]);
 end.
-
-
-
-
-
-
-
