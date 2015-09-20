@@ -14,7 +14,9 @@ Contact [magetron](http://scr.im/patrickw)
 
 ## Current Progress
 
-#### Total Progress: 100/313 
+#### Total Progress: ??/313 
+
+#### Version 0.4
 
 #### Issues
 WA Bug Fix needed for 1.4.13.pas
