@@ -8,16 +8,14 @@ For more details, see [Intro Page](http://magetron.github.io/NOIP-openjudge/)
 
 This repo is under MIT License.
 
-## Wonna Contribute?
-
-Contact [magetron](http://scr.im/patrickw)
-
 ## Current Progress
+
+#### Latest Release: Version 0.4
 
 #### Total Progress: ??/313 
 
-#### Version 0.4
+#### See [Issues](https://github.com/magetron/NOIP-openjudge/issues) to make further contributions to this repo.
 
-#### Issues
-WA Bug Fix needed for 1.4.13.pas
+## Wonna Contribute?
 
+Contact [magetron](http://scr.im/patrickw)
