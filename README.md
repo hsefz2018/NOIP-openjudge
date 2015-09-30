@@ -19,3 +19,7 @@ See [Issues](https://github.com/magetron/NOIP-openjudge/issues) to make further 
 ## Wonna Contribute?
 
 Contact [magetron](http://scr.im/patrickw)
+
+## Current Status
+
+Slow
