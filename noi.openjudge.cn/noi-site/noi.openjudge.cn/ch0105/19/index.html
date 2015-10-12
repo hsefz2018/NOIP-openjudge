@@ -1,0 +1,232 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from noi.openjudge.cn/ch0105/19/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 Sep 2015 09:14:26 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 19:津津的储蓄计划</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1336473062.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1364953364.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1400946309.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1282920127.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1282920127.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1304149352.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1304540848.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1282920127.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1282920127.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1289150014.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1282920127.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1364953790.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1410446884.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '../../index.html',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="../../auth/login/index.html">登入</a></li>
+      <li><a class="link" href="http://noi.openjudge.cn/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="http://noi.openjudge.cn/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="../../index.html"><img class="group-logo" src="http://static.openjudge.cn/images/default_logo_small.png" alt="NOI(题库正在建设中，做题纪录有可能会被删除，请注意)" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="../../index.html" title="首页" rel="home">NOI(题库正在建设中，做题纪录有可能会被删除，请注意)</a></h2>
+		 <span>/</span>
+		 <h2>1.5编程基础之循环控制</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="../index.html" class="first">题目</a></li>
+            <li ><a href="http://noi.openjudge.cn/ch0105/ranking/">排名</a></li>
+                    <li ><a href="http://noi.openjudge.cn/ch0105/status/">状态</a></li>
+	    			        <li class="last"><a href="http://noi.openjudge.cn/ch0105/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>19:津津的储蓄计划</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="index.html">查看</a></li>
+		<li ><a href="http://noi.openjudge.cn/ch0105/19/submit/">提交</a></li>
+				<li ><a href="http://noi.openjudge.cn/ch0105/19/statistics/">统计</a></li>
+			
+		<li ><a href="http://noi.openjudge.cn/ch0105/clarify/19/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>65536kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p>津津的零花钱一直都是自己管理。每个月的月初妈妈给津津300元钱，津津会预算这个月的花销，并且总能做到实际花销和预算的相同。</p><p>为了让津津学习如何储蓄，妈妈提出，津津可以随时把整百的钱存在她那里，到了年末她会加上20％还给津津。因此津津制定了一个储蓄计划：每个月的月初，在得到妈妈给的零花钱后，如果她预计到这个月的月末手中还会有多于100元或恰好100元，她就会把整百的钱存在妈妈那里，剩余的钱留在自己手中。</p><p>例如11月初津津手中还有83元，妈妈给了津津300元。津津预计11月的花销是180元，那么她就会在妈妈那里存200元，自己留下183元。到了11月月末，津津手中会剩下3元钱。</p><p>津津发现这个储蓄计划的主要风险是，存在妈妈那里的钱在年末之前不能取出。有可能在某个月的月初，津津手中的钱加上这个月妈妈给的钱，不够这个月的原定预算。如果出现这种情况，津津将不得不在这个月省吃俭用，压缩预算。</p><p>现在请你根据2004年1月到12月每个月津津的预算，判断会不会出现这种情况。如果不会，计算到2004年年末，妈妈将津津平常存的钱加上20％还给津津之后，津津手中会有多少钱。
+</p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>包括12行数据，每行包含一个小于350的非负整数，分别表示1月到12月津津的预算。</dd>
+		<dt>输出</dt>
+		<dd>包括一行，这一行只包含一个整数。如果储蓄计划实施过程中出现某个月钱不够用的情况，输出-X，X表示出现这种情况的第一个月；否则输出到2004年年末津津手中会有多少钱。</dd>
+		<dt>样例输入</dt>
+		<dd><pre>样例 #1：
+290
+230
+280
+200
+300
+170
+340
+50 
+90 
+80 
+200
+60
+
+样例 #2：
+290 
+230 
+280 
+200 
+300 
+170 
+330 
+50 
+90 
+80 
+200 
+60
+</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>样例 #1：
+-7
+
+样例 #2：
+1580</pre></dd>
+						<dt>来源</dt>
+		<dd>NOIP2004复赛 提高组 第一题</dd>
+				</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="index.html">查看</a></li>
+		<li ><a href="http://noi.openjudge.cn/ch0105/19/submit/">提交</a></li>
+				<li ><a href="http://noi.openjudge.cn/ch0105/19/statistics/">统计</a></li>
+			
+		<li ><a href="http://noi.openjudge.cn/ch0105/clarify/19/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>7903</dd>
+					<dt>添加于</dt>
+			<dd>2015-02-01</dd>
+				<dt>提交次数</dt>
+		<dd>635</dd>
+		<dt>尝试人数</dt>
+	    <dd>353</dd>
+	    <dt>通过人数</dt>
+	    <dd>339</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+
+<!-- Mirrored from noi.openjudge.cn/ch0105/19/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 Sep 2015 09:14:26 GMT -->
+</html>

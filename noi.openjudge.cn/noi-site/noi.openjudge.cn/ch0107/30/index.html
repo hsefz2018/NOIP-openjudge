@@ -1,0 +1,219 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from noi.openjudge.cn/ch0107/30/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 Sep 2015 09:14:45 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 30:字符串的展开</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1336473062.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1364953364.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1400946309.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1282920127.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1282920127.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1304149352.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1304540848.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1282920127.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1282920127.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1289150014.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1282920127.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1364953790.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1410446884.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '../../index.html',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="../../auth/login/index.html">登入</a></li>
+      <li><a class="link" href="http://noi.openjudge.cn/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="http://noi.openjudge.cn/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="../../index.html"><img class="group-logo" src="http://static.openjudge.cn/images/default_logo_small.png" alt="NOI(题库正在建设中，做题纪录有可能会被删除，请注意)" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="../../index.html" title="首页" rel="home">NOI(题库正在建设中，做题纪录有可能会被删除，请注意)</a></h2>
+		 <span>/</span>
+		 <h2>1.7编程基础之字符串</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="../index.html" class="first">题目</a></li>
+            <li ><a href="http://noi.openjudge.cn/ch0107/ranking/">排名</a></li>
+                    <li ><a href="http://noi.openjudge.cn/ch0107/status/">状态</a></li>
+	    			        <li class="last"><a href="http://noi.openjudge.cn/ch0107/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>30:字符串的展开</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="index.html">查看</a></li>
+		<li ><a href="http://noi.openjudge.cn/ch0107/30/submit/">提交</a></li>
+				<li ><a href="http://noi.openjudge.cn/ch0107/30/statistics/">统计</a></li>
+			
+		<li ><a href="http://noi.openjudge.cn/ch0107/clarify/30/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>65536kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p>在初赛普及组的“阅读程序写结果”的问题中，我们曾给出一个字符串展开的例子：如果在输入的字符串中，含有类似于“d-h”或者“4-8”的字串，我们就把它当作一种简写，输出时，用连续递增的字母获数字串替代其中的减号，即，将上面两个子串分别输出为“defgh”和“45678”。在本题中，我们通过增加一些参数的设置，使字符串的展开更为灵活。具体约定如下：</p><p>(1) 遇到下面的情况需要做字符串的展开：在输入的字符串中，出现了减号“-”，减号两侧同为小写字母或同为数字，且按照ASCII码的顺序，减号右边的字符严格大于左边的字符。</p><p>(2) 参数p1：展开方式。p1=1时，对于字母子串，填充小写字母；p1=2时，对于字母子串，填充大写字母。这两种情况下数字子串的填充方式相同。p1=3时，不论是字母子串还是数字字串，都用与要填充的字母个数相同的星号“*”来填充。</p><p>(3) 参数p2：填充字符的重复个数。p2=k表示同一个字符要连续填充k个。例如，当p2=3时，子串“d-h”应扩展为“deeefffgggh”。减号两边的字符不变。</p><p>(4) 参数p3：是否改为逆序：p3=1表示维持原来顺序，p3=2表示采用逆序输出，注意这时候仍然不包括减号两端的字符。例如当p1=1、p2=2、p3=2时，子串“d-h”应扩展为“dggffeeh”。</p><p>(5) 如果减号右边的字符恰好是左边字符的后继，只删除中间的减号，例如：“d-e”应输出为“de”，“3-4”应输出为“34”。如果减号右边的字符按照ASCII码的顺序小于或等于左边字符，输出时，要保留中间的减号，例如：“d-d”应输出为“d-d”，“3-1”应输出为“3-1”。
+</p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>包括两行：<br />第1行为用空格隔开的3个正整数，一次表示参数p1，p2，p3。<br />第2行为一行字符串，仅由数字、小写字母和减号“-”组成。行首和行末均无空格。<br /><br />40%的数据满足：字符串长度不超过5；<br />100%的数据满足：1<=p1<=3，1<=p2<=8，1<=p3<=2。字符串长度不超过100。</dd>
+		<dt>输出</dt>
+		<dd>只有一行，为展开后的字符串。</dd>
+		<dt>样例输入</dt>
+		<dd><pre>样例 #1：
+1 2 1
+abcs-w1234-9s-4zz
+
+样例 #2：
+2 3 2
+a-d-d
+
+样例 #3：
+3 4 2
+di-jkstra2-6
+</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>样例 #1：
+abcsttuuvvw1234556677889s-4zz
+
+样例 #2：
+aCCCBBBd-d
+
+样例 #3：
+dijkstra2************6</pre></dd>
+						<dt>来源</dt>
+		<dd>NOIP2007复赛 提高组 第二题</dd>
+				</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="index.html">查看</a></li>
+		<li ><a href="http://noi.openjudge.cn/ch0107/30/submit/">提交</a></li>
+				<li ><a href="http://noi.openjudge.cn/ch0107/30/statistics/">统计</a></li>
+			
+		<li ><a href="http://noi.openjudge.cn/ch0107/clarify/30/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>7910</dd>
+					<dt>添加于</dt>
+			<dd>2015-02-03</dd>
+				<dt>提交次数</dt>
+		<dd>287</dd>
+		<dt>尝试人数</dt>
+	    <dd>103</dd>
+	    <dt>通过人数</dt>
+	    <dd>80</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+
+<!-- Mirrored from noi.openjudge.cn/ch0107/30/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 Sep 2015 09:14:45 GMT -->
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from noi.openjudge.cn/ch0112/08/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 Sep 2015 09:13:39 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 08:Vigenère密码</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1336473062.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1364953364.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1400946309.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1282920127.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1282920127.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1304149352.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1304540848.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1282920127.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1282920127.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1289150014.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1282920127.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1364953790.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1410446884.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '../../index.html',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="../../auth/login/index.html">登入</a></li>
+      <li><a class="link" href="http://noi.openjudge.cn/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="http://noi.openjudge.cn/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="../../index.html"><img class="group-logo" src="http://static.openjudge.cn/images/default_logo_small.png" alt="NOI(题库正在建设中，做题纪录有可能会被删除，请注意)" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="../../index.html" title="首页" rel="home">NOI(题库正在建设中，做题纪录有可能会被删除，请注意)</a></h2>
+		 <span>/</span>
+		 <h2>1.12编程基础之函数与过程抽象</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="../index.html" class="first">题目</a></li>
+            <li ><a href="http://noi.openjudge.cn/ch0112/ranking/">排名</a></li>
+                    <li ><a href="http://noi.openjudge.cn/ch0112/status/">状态</a></li>
+	    			        <li class="last"><a href="http://noi.openjudge.cn/ch0112/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>08:Vigenère密码</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="index.html">查看</a></li>
+		<li ><a href="http://noi.openjudge.cn/ch0112/08/submit/">提交</a></li>
+				<li ><a href="http://noi.openjudge.cn/ch0112/08/statistics/">统计</a></li>
+			
+		<li ><a href="http://noi.openjudge.cn/ch0112/clarify/08/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>65536kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p>16世纪法国外交家Blaise de Vigenère设计了一种多表密码加密算法——Vigenère密码。Vigenère密码的加密解密算法简单易用，且破译难度比较高，曾在美国南北战争中为南军所广泛使用。</p><p>在密码学中，我们称需要加密的信息为明文，用M表示；称加密后的信息为密文，用C表示；而密钥是一种参数，是将明文转换为密文或将密文转换为明文的算法中输入的数据，记为k。 在Vigenère密码中，密钥k是一个字母串，k=k1k2…kn。当明文M=m1m2…mn时，得到的密文C=c1c2…cn，其中ci=mi®ki，运算®的规则如下表所示：</p><p style="text-align: center;"><img src="http://media.openjudge.cn/images/upload/1423116001.png" width="undefined" height="undefined" /><br /></p><p style="text-align: left;">Vigenère加密在操作时需要注意：</p><p style="text-align: left;">1. ®运算忽略参与运算的字母的大小写，并保持字母在明文M中的大小写形式；</p><p style="text-align: left;">2. 当明文M的长度大于密钥k的长度时，将密钥k重复使用。</p><p style="text-align: left;">例如，明文M=Helloworld，密钥k=abc时，密文C=Hfnlpyosnd。
+</p><table border="1" cellpadding="0" cellspacing="0" width="792" style="width: 594pt;"><colgroup><col width="72" span="11" style="width:54pt" /></colgroup><tbody><tr height="25" style="height:18.75pt"><td height="25" class="xl63" width="72" style="height:18.75pt;width:54pt">明文</td><td class="xl64" width="72" style="width:54pt">H</td><td class="xl64" width="72" style="width:54pt">e</td><td class="xl64" width="72" style="width:54pt">l</td><td class="xl64" width="72" style="width:54pt">l</td><td class="xl64" width="72" style="width:54pt">o</td><td class="xl64" width="72" style="width:54pt">w</td><td class="xl64" width="72" style="width:54pt">o</td><td class="xl64" width="72" style="width:54pt">r</td><td class="xl64" width="72" style="width:54pt">l</td><td class="xl64" width="72" style="width:54pt">d</td></tr><tr height="25" style="height:18.75pt"><td height="25" class="xl65" style="height:18.75pt">密钥</td><td class="xl64">a</td><td class="xl64">b</td><td class="xl64">c</td><td class="xl64">a</td><td class="xl64">b</td><td class="xl64">c</td><td class="xl64">a</td><td class="xl64">b</td><td class="xl64">c</td><td class="xl64">a</td></tr><tr height="25" style="height:18.75pt"><td height="25" class="xl63" style="height:18.75pt">密文</td><td class="xl64">H</td><td class="xl64">f</td><td class="xl64">n</td><td class="xl64">l</td><td class="xl64">p</td><td class="xl64">y</td><td class="xl64">o</td><td class="xl64">s</td><td class="xl64">n</td><td class="xl64">d</td></tr></tbody></table><p style="text-align: left;"><br /></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>输入共2行。 <br />第一行为一个字符串，表示密钥k，长度不超过100，其中仅包含大小写字母。第二行为一个字符串，表示经加密后的密文，长度不超过1000，其中仅包含大小写字母。<br /><br />对于100%的数据，输入的密钥的长度不超过100，输入的密文的长度不超过1000，且都仅包含英文字母。</dd>
+		<dt>输出</dt>
+		<dd>输出共1行，一个字符串，表示输入密钥和密文所对应的明文。</dd>
+		<dt>样例输入</dt>
+		<dd><pre>CompleteVictory
+Yvqgpxaimmklongnzfwpvxmniytm</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>Wherethereisawillthereisaway</pre></dd>
+						<dt>来源</dt>
+		<dd>NOIP2012复赛 提高组 第一题</dd>
+				</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="index.html">查看</a></li>
+		<li ><a href="http://noi.openjudge.cn/ch0112/08/submit/">提交</a></li>
+				<li ><a href="http://noi.openjudge.cn/ch0112/08/statistics/">统计</a></li>
+			
+		<li ><a href="http://noi.openjudge.cn/ch0112/clarify/08/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>7925</dd>
+					<dt>添加于</dt>
+			<dd>2015-02-05</dd>
+				<dt>提交次数</dt>
+		<dd>137</dd>
+		<dt>尝试人数</dt>
+	    <dd>79</dd>
+	    <dt>通过人数</dt>
+	    <dd>70</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+
+<!-- Mirrored from noi.openjudge.cn/ch0112/08/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 Sep 2015 09:13:39 GMT -->
+</html>

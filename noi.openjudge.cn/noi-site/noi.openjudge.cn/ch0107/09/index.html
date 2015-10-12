@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from noi.openjudge.cn/ch0107/09/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 Sep 2015 09:14:39 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 09:潜伏者</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1336473062.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1364953364.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1400946309.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1282920127.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1282920127.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1304149352.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1304540848.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1282920127.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1282920127.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1289150014.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1282920127.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1364953790.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1410446884.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '../../index.html',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="../../auth/login/index.html">登入</a></li>
+      <li><a class="link" href="http://noi.openjudge.cn/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="http://noi.openjudge.cn/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="../../index.html"><img class="group-logo" src="http://static.openjudge.cn/images/default_logo_small.png" alt="NOI(题库正在建设中，做题纪录有可能会被删除，请注意)" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="../../index.html" title="首页" rel="home">NOI(题库正在建设中，做题纪录有可能会被删除，请注意)</a></h2>
+		 <span>/</span>
+		 <h2>1.7编程基础之字符串</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="../index.html" class="first">题目</a></li>
+            <li ><a href="http://noi.openjudge.cn/ch0107/ranking/">排名</a></li>
+                    <li ><a href="http://noi.openjudge.cn/ch0107/status/">状态</a></li>
+	    			        <li class="last"><a href="http://noi.openjudge.cn/ch0107/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>09:潜伏者</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="index.html">查看</a></li>
+		<li ><a href="http://noi.openjudge.cn/ch0107/09/submit/">提交</a></li>
+				<li ><a href="http://noi.openjudge.cn/ch0107/09/statistics/">统计</a></li>
+			
+		<li ><a href="http://noi.openjudge.cn/ch0107/clarify/09/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>65536kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p>R国和S国正陷入战火之中，双方都互派间谍，潜入对方内部，伺机行动。</p><p>历经艰险后，潜伏于S国的R国间谍小C终于摸清了S国军用密码的编码规则：</p><p>1、&nbsp;&nbsp;&nbsp;&nbsp;S国军方内部欲发送的原信息经过加密后在网络上发送，原信息的内容与加密后所的内容均由大写字母‘A’—‘Z’构成（无空格等其他字母）。</p><p>2、&nbsp;&nbsp;&nbsp;&nbsp;S国对于每个字母规定了对应的“密字”。加密的过程就是将原信息中的所有字母替换为其对应的“密字”。</p><p>3、&nbsp;&nbsp;&nbsp;&nbsp;每个字母只对应一个唯一的“密字”，不同的字母对应不同的“密字”。“密字”可以和原字母相同。</p><p>例如，若规定‘A’的密字为‘A’，‘B’的密字为‘C’（其他字母及密字略），则原信息“ABA”被加密为“ACA”。</p><p>现在，小C通过内线掌握了S国网络上发送的一条加密信息及其对应的原信息。小C希望能通过这条信息，破译S国的军用密码。小C的破译过程是这样的：扫描原信息，对于原信息中的字母x（代表任一大写字母），找到其在加密信息中的对应大写字母y，并认为在密码里y是x的密字。如此进行下去直到停止于如下的某个状态：</p><p>1、&nbsp;&nbsp;&nbsp;&nbsp;所有信息扫描完毕，‘A’—‘Z’所有26个字母在原信息中均出现过并获得了相应的“密字”。</p><p>2、&nbsp;&nbsp;&nbsp;&nbsp;所有信息扫描完毕，但发现存在某个（或某些）字母在原信息中没有出现。</p><p>3、&nbsp;&nbsp;&nbsp;&nbsp;扫描中发现掌握的信息里有明显的自相矛盾或错误（违反S过密码的编码规则）。例如某条信息“XYZ”被翻译为“ABA”就违反了“不同字母对应不同密字”的规则。</p><p>在小C忙得头昏脑胀之际，R国司令部又发来电报，要求他翻译另外一条从S国刚刚截取到的加密信息。现在请你帮助小C：通过内线掌握的信息，尝试破译密码。然后利用破译的密码，翻译电报中的加密信息。
+</p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>共3行，每行为一个长度在1到100之间的字符串。<br />第1行为小C掌握的一条加密信息。<br />第2行为第1行的加密信息所对应的原信息。<br />第3行为R国司令部要求小C翻译的加密信息。<br />输入数据保证所有字符串仅由大写字母‘A’—‘Z’构成，且第1行长度与第2行相等。</dd>
+		<dt>输出</dt>
+		<dd>共1行。<br />若破译密码停止时出现2，3两种情况，请你输出“Failed”（不含引号，注意首字母大写，其它小写）。<br />否则请输出利用密码翻译电报中加密信息后得到的原信息。</dd>
+		<dt>样例输入</dt>
+		<dd><pre>样例 #1：
+AA
+AB
+EOWIE
+
+样例 #2：
+QWERTYUIOPLKJHGFDSAZXCVBN
+ABCDEFGHIJKLMNOPQRSTUVWXY
+DSLIEWO
+
+样例 #3：
+MSRTZCJKPFLQYVAWBINXUEDGHOOILSMIJFRCOPPQCEUNYDUMPP
+YIZSDWAHLNOVFUCERKJXQMGTBPPKOIYKANZWPLLVWMQJFGQYLL
+FLSO</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>样例 #1：
+Failed
+
+样例#2：
+Failed
+
+样例#3：
+NOIP
+</pre></dd>
+				<dt>提示</dt>
+		<dd>输入输出样例1说明：原信息中的字母‘A’和‘B’对应相同的密字，输出“Failed”。<br /><br />输入输出样例2说明：字母‘Z’在原信息中没有出现，输出“Failed”。</dd>
+						<dt>来源</dt>
+		<dd>NOIP2009复赛 提高组 第一题</dd>
+				</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="index.html">查看</a></li>
+		<li ><a href="http://noi.openjudge.cn/ch0107/09/submit/">提交</a></li>
+				<li ><a href="http://noi.openjudge.cn/ch0107/09/statistics/">统计</a></li>
+			
+		<li ><a href="http://noi.openjudge.cn/ch0107/clarify/09/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>7915</dd>
+					<dt>添加于</dt>
+			<dd>2015-02-03</dd>
+				<dt>提交次数</dt>
+		<dd>511</dd>
+		<dt>尝试人数</dt>
+	    <dd>177</dd>
+	    <dt>通过人数</dt>
+	    <dd>135</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+
+<!-- Mirrored from noi.openjudge.cn/ch0107/09/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 Sep 2015 09:14:39 GMT -->
+</html>

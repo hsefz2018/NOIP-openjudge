@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from noi.openjudge.cn/ch0206/7627/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 Sep 2015 09:13:53 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 7627:鸡蛋的硬度</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1336473062.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1364953364.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1400946309.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1282920127.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1282920127.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1304149352.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1304540848.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1282920127.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1282920127.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1289150014.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1282920127.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1364953790.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1410446884.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '../../index.html',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="../../auth/login/index.html">登入</a></li>
+      <li><a class="link" href="http://noi.openjudge.cn/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="http://noi.openjudge.cn/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="../../index.html"><img class="group-logo" src="http://static.openjudge.cn/images/default_logo_small.png" alt="NOI(题库正在建设中，做题纪录有可能会被删除，请注意)" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="../../index.html" title="首页" rel="home">NOI(题库正在建设中，做题纪录有可能会被删除，请注意)</a></h2>
+		 <span>/</span>
+		 <h2>2.6基本算法之动态规划</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="../index.html" class="first">题目</a></li>
+            <li ><a href="http://noi.openjudge.cn/ch0206/ranking/">排名</a></li>
+                    <li ><a href="http://noi.openjudge.cn/ch0206/status/">状态</a></li>
+	    			        <li class="last"><a href="http://noi.openjudge.cn/ch0206/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>7627:鸡蛋的硬度</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="index.html">查看</a></li>
+		<li ><a href="http://noi.openjudge.cn/ch0206/7627/submit/">提交</a></li>
+				<li ><a href="http://noi.openjudge.cn/ch0206/7627/statistics/">统计</a></li>
+			
+		<li ><a href="http://noi.openjudge.cn/ch0206/clarify/7627/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>65536kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p>最近XX公司举办了一个奇怪的比赛：鸡蛋硬度之王争霸赛。参赛者是来自世
+界各地的母鸡，比赛的内容是看谁下的蛋最硬，更奇怪的是XX公司并不使用什么精密仪器来测量蛋的硬度，他们采用了一种最老土的办法--从高度扔鸡蛋--来
+测试鸡蛋的硬度，如果一次母鸡下的蛋从高楼的第a层摔下来没摔破，但是从a+1层摔下来时摔破了，那么就说这只母鸡的鸡蛋的硬度是a。你当然可以找出各种
+理由说明这种方法不科学，比如同一只母鸡下的蛋硬度可能不一样等等，但是这不影响XX公司的争霸赛，因为他们只是为了吸引大家的眼球，一个个鸡蛋从100
+层的高楼上掉下来的时候，这情景还是能吸引很多人驻足观看的，当然，XX公司也绝不会忘记在高楼上挂一条幅，写上“XX公司”的字样--这比赛不过是XX
+公司的一个另类广告而已。
+<br />勤于思考的小A总是能从一件事情中发现一个数学问题，这件事也不例外。“假如有很多同样硬度的鸡蛋，那么我可以用二分的办法用最少的次数测出鸡蛋
+的硬度”，小A对自己的这个结论感到很满意，不过很快麻烦来了，“但是，假如我的鸡蛋不够用呢，比如我只有1个鸡蛋，那么我就不得不从第1层楼开始一层一
+层的扔，最坏情况下我要扔100次。如果有2个鸡蛋，那么就从2层楼开始的地方扔……等等，不对，好像应该从1/3的地方开始扔才对，嗯，好像也不一定
+啊……3个鸡蛋怎么办，4个，5个，更多呢……”，和往常一样，小A又陷入了一个思维僵局，与其说他是勤于思考，不如说他是喜欢自找麻烦。
+<br />好吧，既然麻烦来了，就得有人去解决，小A的麻烦就靠你来解决了：）<br /></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>输入包括多组数据，每组数据一行，包含两个正整数n和m(1<=n<=100,1<=m<=10)，其中n表示楼的高度，m表示你现在拥有的鸡蛋个数，这些鸡蛋硬度相同（即它们从同样高的地方掉下来要么都摔碎要么都不碎），并且小于等于n。你可以假定硬度为x的鸡蛋从高度小于等于x的地方摔无论如何都不会碎（没摔碎的鸡蛋可以继续使用），而只要从比x高的地方扔必然会碎。<br />对每组输入数据，你可以假定鸡蛋的硬度在0至n之间，即在n+1层扔鸡蛋一定会碎。</dd>
+		<dt>输出</dt>
+		<dd>对于每一组输入，输出一个整数，表示使用最优策略在最坏情况下所需要的扔鸡蛋次数。</dd>
+		<dt>样例输入</dt>
+		<dd><pre>100 1
+100 2</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>100
+14</pre></dd>
+				<dt>提示</dt>
+		<dd>最优策略指在最坏情况下所需要的扔鸡蛋次数最少的策略。<br />如果只有一个鸡蛋，你只能从第一层开始扔，在最坏的情况下，鸡蛋的硬度是100，所以需要扔100次。如果采用其他策略，你可能无法测出鸡蛋的硬度(比如你第一次在第二层的地方扔,结果碎了,这时你不能确定硬度是0还是1)，即在最坏情况下你需要扔无限次，所以第一组数据的答案是100。</dd>
+						<dt>来源</dt>
+		<dd>习题(15-12)</dd>
+				</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="index.html">查看</a></li>
+		<li ><a href="http://noi.openjudge.cn/ch0206/7627/submit/">提交</a></li>
+				<li ><a href="http://noi.openjudge.cn/ch0206/7627/statistics/">统计</a></li>
+			
+		<li ><a href="http://noi.openjudge.cn/ch0206/clarify/7627/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>7627</dd>
+					<dt>添加于</dt>
+			<dd>2014-12-15</dd>
+				<dt>提交次数</dt>
+		<dd>166</dd>
+		<dt>尝试人数</dt>
+	    <dd>61</dd>
+	    <dt>通过人数</dt>
+	    <dd>56</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+
+<!-- Mirrored from noi.openjudge.cn/ch0206/7627/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 Sep 2015 09:13:53 GMT -->
+</html>
