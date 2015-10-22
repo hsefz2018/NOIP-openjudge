@@ -1,4 +1,0 @@
-# HTTrack Website Copier Cookie File
-# This file format is compatible with Netscape cookies
-.openjudge.cn	TRUE	/	FALSE	1999999999	PHPSESSID	ocjojd4rrcr9e1adcabajqehi0
-

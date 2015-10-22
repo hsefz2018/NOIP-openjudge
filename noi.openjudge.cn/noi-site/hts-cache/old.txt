@@ -1,3 +1,0 @@
-date	size'/'remotesize	flags(request:Update,Range state:File response:Modified,Chunked,gZipped)	statuscode	status ('servermsg')	MIME	Etag|Date	URL	localfile	(from URL)
-17:12:27	132/132	U-----	200	untouched ('OK')	text/plain	date:Fri,%2027%20Aug%202010%2014:42:07%20GMT	http://noi.openjudge.cn/robots.txt		(from )
-17:12:27	61813/61813	U--MCZ	200	updated ('OK')	text/html	date:Sat,%2012%20Sep%202015%2009:13:56%20GMT	http://noi.openjudge.cn/	/home/skyzh/noi.openjudge.cn/noi-site/noi.openjudge.cn/index.html	(from )
