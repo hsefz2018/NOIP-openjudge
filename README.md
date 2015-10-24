@@ -10,7 +10,7 @@ This repo is under MIT License.
 
 ## Current Progress
 
-Latest Release: Version 0.4
+Latest Release: Version 0.8
 
 Total Progress: ??/313 
 
