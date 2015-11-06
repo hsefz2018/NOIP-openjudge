@@ -1,5 +1,6 @@
 // Submission #3365787
 #include <stdio.h>
+#include <string.h>
 #define MAXN 8
 #define TRUE  1
 #define FALSE 0
