@@ -27,4 +27,3 @@ Contact [magetron](http://scr.im/patrickw)
 
 ## Current Status
 
-Used to be fast last week
