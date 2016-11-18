@@ -2,7 +2,7 @@
 
 GL&HF everyone <3
 ====================
-** Wish everybody an AK \(//∇//)\ **
+** Wish everybody an AK \\(//∇//)\ **
 ====================
 
 Repo for [noi.openjudge.cn](http://noi.openjudge.cn/)
